@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">whatsApp</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="register_here">Register Here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="group_chat">Group Chat</string>
+    <string name="settings">Settings</string>
+    <string name="logout">LogOut</string>
+
+</resources>

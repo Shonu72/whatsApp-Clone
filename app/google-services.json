@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "541388242989",
+    "firebase_url": "https://whatasapp-shourya-default-rtdb.firebaseio.com",
+    "project_id": "whatasapp-shourya",
+    "storage_bucket": "whatasapp-shourya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541388242989:android:82f83e02e9274501c7b8a4",
+        "android_client_info": {
+          "package_name": "com.coolblogger.tech.whatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541388242989-jp00h00nbatjpoaafojge0ocsjvq0vg6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coolblogger.tech.whatsapp",
+            "certificate_hash": "17daa016362e2037e97e9904289218740631c91b"
+          }
+        },
+        {
+          "client_id": "541388242989-lfi9gmmmi7200phddv65l4llrbchcaue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsxgb-NcU3Vhz_rH76LX83JUq2BfmC25k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541388242989-lfi9gmmmi7200phddv65l4llrbchcaue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
