@@ -69,19 +69,19 @@
                 android:id="@+id/leftArrow"
                 android:layout_width="26dp"
                 android:layout_height="36dp"
-                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/left" />
+                app:srcCompat="@drawable/left"
+                app:tint="@color/white" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
+                android:id="@+id/profileImage"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:padding="6dp"
                 android:src="@drawable/gamer"
-                app:civ_border_color="#FF000000"
+                app:civ_border_color="@color/lite_black"
                 app:civ_border_width="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/leftArrow"
@@ -95,8 +95,9 @@
                 android:text="Shourya"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/msgbox"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:layout_constraintStart_toEndOf="@+id/profileImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -123,17 +124,16 @@
                 app:tint="@color/white" />
 
 
-
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="7dp"
-                app:tint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/dots"
+                app:tint="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>

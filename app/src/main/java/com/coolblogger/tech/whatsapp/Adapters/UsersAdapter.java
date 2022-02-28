@@ -14,7 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.coolblogger.tech.whatsapp.ChatDetails;
 import com.coolblogger.tech.whatsapp.Models.users;
 import com.coolblogger.tech.whatsapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -42,6 +46,29 @@ ArrayList<users> list;
         users users = list.get(position);
         Picasso.get().load(users.getProfileimg()).placeholder(R.drawable.gamer).into(holder.image);
         holder.userName.setText(users.getUserName());
+
+        FirebaseDatabase.getInstance().getReference().child("chats")
+                .child(FirebaseAuth.getInstance().getUid() + users.getUserId())
+                .orderByChild("timeStamp")
+                .limitToLast(1)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot snapshot1 : snapshot.getChildren()){
+                        holder.lastMsg.setText(snapshot1.child("message").getValue(String.class));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
         holder.userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +93,7 @@ ArrayList<users> list;
         TextView userName, lastMsg;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.profile_image);
+            image = itemView.findViewById(R.id.profileImage);
             userName = itemView.findViewById(R.id.userNameList);
             lastMsg = itemView.findViewById(R.id.lastMsg);
 

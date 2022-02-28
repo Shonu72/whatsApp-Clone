@@ -10,7 +10,8 @@
     <color name="transparent_blue">#caf0f8</color>
     <color name = "golden">#EE7A1C</color>
     <color name="black">#FF000000</color>
-    <color name="lite_black">#808989</color>
+    <color name="softblack">#E7383636</color>
+    <color name="lite_black">#C6CDCD</color>
     <color name="white">#FFFFFFFF</color>
     <color name="msgbox">#EDE6EFF1</color>
 </resources>

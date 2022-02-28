@@ -69,6 +69,7 @@ public class ChatDetails extends AppCompatActivity {
                 for(DataSnapshot snapshot1 : snapshot.getChildren()){
                     msgModels models = snapshot1.getValue(msgModels.class);
                     msgsModel.add(models);
+//                    models.setTimeStamp(new Date().getTime());
                 }
                 chatAdapter.notifyDataSetChanged();
             }
@@ -85,14 +86,14 @@ public class ChatDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               String msg =   binding.msgBox.getText().toString();
-              final msgModels models = new msgModels(senderId,msg);
-              models.setTimeStamp(new Date().getTime());
+              final msgModels model = new msgModels(senderId,msg);
+              model.setTimeStamp(new Date().getTime());
               binding.msgBox.setText("");
-              database.getReference().child("chats").child(senderRoom).push().setValue(models)
+              database.getReference().child("chats").child(senderRoom).push().setValue(model)
                       .addOnSuccessListener(new OnSuccessListener<Void>() {
                   @Override
                   public void onSuccess(Void unused) {
-                      database.getReference().child("chats").child(receiverRoom).push().setValue(models)
+                      database.getReference().child("chats").child(receiverRoom).push().setValue(model)
                               .addOnSuccessListener(new OnSuccessListener<Void>() {
                           @Override
                           public void onSuccess(Void unused) {

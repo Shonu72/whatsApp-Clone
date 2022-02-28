@@ -39,21 +39,6 @@ FirebaseAuth auth;
         new TabLayoutMediator(binding.tablayout, binding.viewpager,((tab, position) -> tab.setText(titles[position]))).attach();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("message");
-//        myRef.setValue("Hello world");
-
-//        myRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String value = snapshot.getValue(String.class);
-//                Toast.makeText(MainActivity.this, "" + value, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }
 
     @Override
@@ -67,7 +52,8 @@ FirebaseAuth auth;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.setting:
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+               Intent intent3 = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.logout:
                 auth.signOut();
